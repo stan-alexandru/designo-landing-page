@@ -1,6 +1,6 @@
 {
-	"name": "astro-template",
-	"description": "DESCRIPTION",
+	"name": "designo-landing-page",
+	"description": "My interpretation of the Designo landing page challenge from FrontEnd Mentor",
 	"type": "module",
 	"version": "0.0.1",
 	"author": {
