@@ -1,5 +1,6 @@
 ---
 import '@/assets/style/main.css';
+import { SEO } from 'astro-seo';
 
 interface Props {
 	title: string;
@@ -11,12 +12,27 @@ const { title } = Astro.props;
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='description' content='DESCRIPTION' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/svg+xml' href='/favicon-32x32.png' />
 		<link rel='sitemap' href='/sitemap-index.xml' />
+		<SEO
+			titleTemplate='%s | Designo'
+			titleDefault='Designo Landing page'
+			title={title}
+			description='Designo landing page challenge from FrontEnd Mentor'
+			openGraph={{
+				basic: {
+					title: 'Designo landing page challenge from FrontEnd Mentor',
+					type: 'website',
+					image: '/public/og-image.webp',
+					url: 'https://designo.alexstan.com',
+				},
+			}}
+			twitter={{
+				card: 'summary',
+			}}
+		/>
 		<meta name='generator' content={Astro.generator} />
-		<title>{`${title} | Designo`}</title>
 	</head>
 	<body>
 		<main class='container'><slot /></main>
