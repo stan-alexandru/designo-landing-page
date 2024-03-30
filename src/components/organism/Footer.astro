@@ -1,0 +1,155 @@
+---
+import { HEADER_DATA, SOCIAL_DATA } from '@/data';
+---
+
+<footer>
+	<div class='container'>
+		<div class='footer-logo-wrapper'>
+			<a href='/' class='footer-logo'>
+				<img
+					src='/assets/shared/desktop/logo-light.png'
+					alt='Logo'
+					width='202'
+					height='27'
+				/>
+			</a>
+			<nav class='footer-nav'>
+				{
+					HEADER_DATA.map((item) => (
+						<a href={item.href} class='footer-nav-item'>
+							{item.title}
+						</a>
+					))
+				}
+			</nav>
+		</div>
+
+		<div class='footer-location-wrapper'>
+			<div class='footer-section-wrapper'>
+				<section class='footer-location-section'>
+					<h1>Designo Central Office</h1>
+					<p>3886 Wellington Street</p>
+					<p>Toronto, Ontario M9C 3J5</p>
+				</section>
+				<section class='footer-location-section'>
+					<h1>Contact Us (Central Office)</h1>
+					<p>+1 253-863-8967</p>
+					<p>contact@designo.co</p>
+				</section>
+			</div>
+
+			<address>
+				{
+					SOCIAL_DATA.map((social) => (
+						<a href={social.href}>
+							<img src={social.path} alt={social.title} />
+						</a>
+					))
+				}
+			</address>
+		</div>
+	</div>
+</footer>
+
+<style scoped>
+	footer {
+		background-color: var(--color-primary-black);
+		padding: 4rem 1.5rem;
+	}
+	.footer-logo {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--color-secondary-grey-dark);
+		@media (--size-md) {
+			width: unset;
+			border-bottom: 0px;
+			padding-bottom: 0px;
+		}
+	}
+	.footer-nav-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 2.5rem;
+		@media (--size-md) {
+		}
+	}
+	.footer-nav {
+		padding-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		align-items: center;
+		justify-items: center;
+		@media (--size-md) {
+			flex-direction: row;
+			padding-top: 0;
+			gap: 42px;
+		}
+	}
+	.footer-nav-item {
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--color-primary-white);
+	}
+	.footer-location-section {
+		text-align: center;
+		font-size: 16px;
+		line-height: 26px;
+		h1 {
+			font-size: 16px;
+			line-height: 26px;
+			font-weight: 700;
+		}
+	}
+	.footer-logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@media (--size-md) {
+			flex-direction: row;
+			border-bottom: 1px solid var(--color-secondary-grey-dark);
+			justify-content: space-between;
+			padding-bottom: 2.5rem;
+		}
+	}
+	.footer-location-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem;
+		@media (--size-md) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: end;
+			gap: 50px;
+		}
+		p {
+			margin: 0;
+		}
+		.footer-section-wrapper {
+			margin-top: 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: end;
+			gap: 2.5rem;
+			@media (--size-md) {
+				flex-direction: row;
+			}
+		}
+	}
+	address {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+</style>

@@ -1,0 +1,131 @@
+---
+import { HEADER_DATA } from '@/data';
+---
+
+<header>
+	<div class='wrapper container'>
+		<a href='/'>
+			<img
+				src='/assets/shared/desktop/logo-dark.png'
+				alt='Logo'
+				width='202'
+				height='27'
+			/>
+		</a>
+		<div>
+			<button id='toggle-nav' class='mobile-nav-button'>
+				<img
+					id='mobile-nav-button'
+					src='/assets/shared/mobile/icon-hamburger.svg'
+					width='24'
+					height='20'
+					alt='Hamburger'
+				/>
+			</button>
+
+			<nav>
+				{
+					HEADER_DATA.map((item) => (
+						<a href={item.href} class='nav-item'>
+							{item.title}
+						</a>
+					))
+				}
+			</nav>
+		</div>
+	</div>
+</header>
+<nav id='mobile-nav' class='mobile-nav'>
+	<div class='container mobile-nav-container'>
+		{HEADER_DATA.map((item) => <a href={item.href}>{item.title}</a>)}
+	</div>
+</nav>
+<script>
+	const navigation = document.getElementById('toggle-nav');
+	const image = document.getElementById('mobile-nav-button');
+
+	function toggleNav() {
+		const navigation = document.getElementById('mobile-nav');
+		console.log('working');
+		if (navigation?.style.display === 'inline-block') {
+			navigation.style.display = 'none';
+			image?.setAttribute('src', '/assets/shared/mobile/icon-hamburger.svg');
+		} else {
+			navigation.style.display = 'inline-block';
+			image?.setAttribute('src', '/assets/shared/mobile/icon-close.svg');
+		}
+	}
+	navigation?.addEventListener('click', toggleNav);
+</script>
+
+<style scoped>
+	header {
+		margin-top: 1.875rem;
+		margin-bottom: 1.875rem;
+		padding: 0 1.5rem;
+		box-sizing: border-box;
+		@media (--size-md) {
+			margin-bottom: 3.875rem;
+		}
+	}
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav {
+		display: none;
+		gap: 42px;
+		@media (--size-md) {
+			display: flex;
+		}
+	}
+	.nav-item {
+		font-size: 14px;
+		line-height: 14px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: var(--font-weight-400);
+		color: var(--color-secondary-grey-dark);
+		&:hover {
+			text-decoration: solid 1px underline;
+			/* font-weight: var(--font-weight-500); */
+		}
+	}
+	.mobile-nav-button {
+		border: 0px;
+		display: inline-block;
+		@media (--size-md) {
+			display: none;
+		}
+	}
+	.mobile-nav {
+		z-index: 9999;
+		position: absolute;
+		background-color: var(--color-primary-black);
+		width: 100dvw;
+		@media (--size-md) {
+			display: none;
+		}
+		.mobile-nav-container {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			padding: 3rem 1.5rem;
+			@media (--size-md) {
+				display: none;
+			}
+
+			a {
+				font-size: 24px;
+				line-height: 25px;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-weight: var(--font-weight-400);
+				color: var(--color-primary-white);
+			}
+		}
+	}
+</style>
