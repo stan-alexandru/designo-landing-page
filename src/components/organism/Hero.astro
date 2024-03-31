@@ -1,0 +1,76 @@
+---
+import Button from '../atom/Button.astro';
+---
+
+<section>
+	<div>
+		<h1>Award-winning custom designs and digital branding solutions</h1>
+		<p>
+			With over 10 years in the industry, we are experienced in creating fully
+			responsive websites, app design, and engaging brand experiences. Find out
+			more about our services.
+		</p>
+		<Button theme='dark' text='Learn more' href='/contact' />
+	</div>
+	<div class='img-wrapper'>
+		<img
+			src='/assets/home/desktop/image-hero-phone.png'
+			alt='hero-background'
+		/>
+	</div>
+</section>
+
+<style>
+	section {
+		background-color: var(--color-primary-peach);
+		color: var(--color-primary-white);
+		display: flex;
+		flex-direction: column;
+		background-image: url('/assets/home/desktop/bg-pattern-hero-home.svg');
+		background-repeat: no-repeat;
+		background-position: 0% 40%;
+		background-size: auto;
+		padding: 3.75rem 1.5rem 0 1.5rem;
+		gap: 5rem;
+
+		@media (--size-md) {
+			border-radius: 0.9375rem;
+			padding: 1.875rem 3.625rem 0 3.625rem;
+		}
+		@media (--size-lg) {
+			flex-direction: row;
+			padding: 7.25rem 5.9375rem 0 5.9375rem;
+		}
+		@media (--size-lg) {
+			background-position: 100% 0%;
+		}
+		div {
+			text-align: center;
+			@media (--size-lg) {
+				text-align: left;
+			}
+		}
+		p {
+			margin-bottom: 1.5rem;
+		}
+		.img-wrapper {
+			flex-shrink: 0;
+			position: relative;
+			width: 284px;
+			height: 370px;
+			margin-inline: auto;
+			overflow: hidden;
+			@media (--size-md) {
+				height: 388px;
+			}
+			@media (--size-lg) {
+				height: 554px;
+			}
+
+			& img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+</style>
