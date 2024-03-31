@@ -35,17 +35,29 @@ export const PROJECTS = [
 	{
 		title: 'WEB DESIGN',
 		href: '/projects/web-design',
-		path: '/assets/home/mobile/image-web-design.jpg',
+		background: {
+			small: '/assets/home/mobile/image-web-design.jpg',
+			medium: '/assets/home/tablet/image-web-design.jpg',
+			large: '/assets/home/desktop/image-web-design-large.jpg',
+		},
 	},
 	{
 		title: 'APP DESIGN',
 		href: '/projects/app-design',
-		path: '/assets/home/mobile/image-app-design.jpg',
+		background: {
+			small: '/assets/home/mobile/image-app-design.jpg',
+			medium: '/assets/home/tablet/image-app-design.jpg',
+			large: '/assets/home/desktop/image-app-design.jpg',
+		},
 	},
 	{
 		title: 'GRAPHIC DESIGN',
 		href: '/projects/graphic-design',
-		path: '/assets/home/mobile/image-graphic-design.jpg',
+		background: {
+			small: '/assets/home/mobile/image-graphic-design.jpg',
+			medium: '/assets/home/tablet/image-graphic-design.jpg',
+			large: '/assets/home/desktop/image-graphic-design.jpg',
+		},
 	},
 ];
 

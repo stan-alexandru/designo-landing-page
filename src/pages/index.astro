@@ -1,8 +1,50 @@
 ---
+import PersonalityCard from '@/components/molecule/PersonalityCard.astro';
+import ProjectCard from '@/components/molecule/ProjectCard.astro';
 import Hero from '@/components/organism/Hero.astro';
 import Layout from '@/components/template/Layout.astro';
+import { PROJECTS, PERSONALITY } from '@/data';
 ---
 
 <Layout title='Home'>
-	<section><Hero /></section>
+	<section>
+		<Hero />
+		<div class='project-wrapper'>
+			{PROJECTS.map((projects) => <ProjectCard {...projects} />)}
+		</div>
+		<div class='personality-wrapper'>
+			{PERSONALITY.map((pers) => <PersonalityCard {...pers} />)}
+		</div>
+	</section>
 </Layout>
+<style scoped>
+	.project-wrapper {
+		margin-top: 7.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		@media (--size-lg) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-column-gap: 1.875rem;
+			grid-row-gap: 1.5rem;
+		}
+	}
+	.personality-wrapper {
+		margin-top: 120px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5rem;
+		@media (--size-md) {
+			margin-top: 160px;
+			gap: 2rem;
+		}
+		@media (--size-lg) {
+			gap: 1.875rem;
+			flex-direction: row;
+		}
+	}
+</style>
