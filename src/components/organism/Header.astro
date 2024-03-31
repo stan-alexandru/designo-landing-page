@@ -45,8 +45,7 @@ import { HEADER_DATA } from '@/data';
 	const image = document.getElementById('mobile-nav-button');
 
 	function toggleNav() {
-		const navigation = document.getElementById('mobile-nav');
-		console.log('working');
+		const navigation = document.getElementById('mobile-nav')!;
 		if (navigation?.style.display === 'inline-block') {
 			navigation.style.display = 'none';
 			image?.setAttribute('src', '/assets/shared/mobile/icon-hamburger.svg');
