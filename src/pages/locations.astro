@@ -1,7 +1,24 @@
 ---
+import LocationCard from '@/components/molecule/LocationCard.astro';
 import Layout from '@/components/template/Layout.astro';
+import { LOCATIONS } from '@/data';
 ---
 
 <Layout title='Locations'>
-	<section>hello</section>
+	<section>
+		{LOCATIONS.map((location) => <LocationCard {...location} />)}
+	</section>
 </Layout>
+<style scoped>
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		@media (--size-md) {
+			gap: 120px;
+		}
+		@media (--size-lg) {
+			gap: 32px;
+		}
+	}
+</style>

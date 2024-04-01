@@ -82,3 +82,53 @@ export const PERSONALITY = [
 		path: '/assets/home/desktop/illustration-friendly.svg',
 	},
 ];
+export const LOCATIONS = [
+	{
+		country: 'Canada',
+		image: {
+			small: '/assets/locations/desktop/image-map-canada.png',
+			large: '/assets/locations/tablet/image-map-canada.png',
+		},
+		office: {
+			title: 'Designo Central Office',
+			street: '1886 Wellington Street',
+			city: 'Toronto,Ontario M9C 3J5',
+		},
+		contact: {
+			phone: '+1 253-863-8967',
+			mail: 'contact@designo.co',
+		},
+	},
+	{
+		country: 'Australia',
+		image: {
+			small: '/assets/locations/desktop/image-map-australia.png',
+			large: '/assets/locations/tablet/image-map-australia.png',
+		},
+		office: {
+			title: 'Designo AU Office',
+			street: '19 Balonne Street',
+			city: 'New South Wales 2443',
+		},
+		contact: {
+			phone: '(02) 6720 9092',
+			mail: 'contact@designo.au',
+		},
+	},
+	{
+		country: 'United Kingdom',
+		image: {
+			small: '/assets/locations/desktop/image-map-united-kingdom.png',
+			large: '/assets/locations/tablet/image-map-uk.png',
+		},
+		office: {
+			title: 'Designo UK Office',
+			street: '13 Colorado Way',
+			city: 'Rhyd-y-fro SA8 9GA',
+		},
+		contact: {
+			phone: '078 3115 1400',
+			mail: 'contact@designo.uk',
+		},
+	},
+];
