@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+	country: string;
+	path: string;
+	href?: string;
+}
+const { country, path } = Astro.props;
+---
+
+<article>
+	<Image src={path} width={202} height={202} alt={`${country} illustration`} />
+	<div>
+		<h1>{country}</h1>
+		<button>See Location</button>
+	</div>
+</article>
+
+<style scoped>
+	article {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+	}
+	h1 {
+		color: var(--color-primary-black);
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+	img {
+		background-image: url('/assets/home/desktop/bg-pattern-hero-home.svg');
+		background-size: cover;
+	}
+	button {
+		background-color: var(--color-primary-peach);
+		color: var(--color-primary-white);
+		height: 3.5rem;
+		width: 9.5rem;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: var(--font-weight-500);
+		transition: 0.3s;
+		&:hover {
+			background-color: var(--color-secondary-peach-light);
+		}
+	}
+</style>

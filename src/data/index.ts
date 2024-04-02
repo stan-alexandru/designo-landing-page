@@ -132,3 +132,17 @@ export const LOCATIONS = [
 		},
 	},
 ];
+export const COUNTRIES = [
+	{
+		country: 'Canada',
+		path: '/assets/shared/desktop/illustration-canada.svg',
+	},
+	{
+		country: 'Australia',
+		path: '/assets/shared/desktop/illustration-australia.svg',
+	},
+	{
+		country: 'United Kingdom',
+		path: '/assets/shared/desktop/illustration-united-kingdom.svg',
+	},
+];
