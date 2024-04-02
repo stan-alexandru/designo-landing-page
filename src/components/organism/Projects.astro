@@ -1,0 +1,33 @@
+---
+import ShowcaseCard from '../molecule/ShowcaseCard.astro';
+
+interface Props {
+	projects: {
+		name: string;
+		desc: string;
+		img: string;
+	}[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section>{projects.map((project) => <ShowcaseCard {...project} />)}</section>
+<style>
+	section {
+		margin-top: 120px;
+		display: grid;
+		grid-template-columns: repeat(1fr);
+		grid-template-rows: repeat(1fr);
+		grid-row-gap: 40px;
+		@media (--size-md) {
+			grid-column-gap: 0px;
+			grid-row-gap: 32px;
+		}
+		@media (--size-lg) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-column-gap: 32px;
+			grid-row-gap: 30px;
+		}
+	}
+</style>

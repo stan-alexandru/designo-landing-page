@@ -1,0 +1,76 @@
+---
+interface Props {
+	name: string;
+	desc: string;
+	img: string;
+}
+const { name, desc, img } = Astro.props;
+---
+
+<article>
+	<img src={img} />
+	<div class='wrapper'>
+		<h1>{name}</h1>
+		<p>{desc}</p>
+	</div>
+</article>
+<style scoped>
+	img {
+		height: 320px;
+
+		@media (--size-md) {
+			height: 310px;
+		}
+		@media (--size-lg) {
+			height: 320px;
+			width: 350px;
+		}
+	}
+	article {
+		border-radius: var(--border-radius);
+		margin-inline: 24px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+
+		@media (--size-md) {
+			margin-inline: unset;
+			flex-direction: row;
+		}
+		@media (--size-lg) {
+			margin-inline: unset;
+			flex-direction: column;
+		}
+	}
+
+	.wrapper {
+		text-align: center;
+		padding: 32px 30px;
+		background-color: #fdf3f0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		h1 {
+			margin: 0;
+			font-size: 20px;
+			line-height: 26px;
+			letter-spacing: 5px;
+			color: var(--color-primary-peach);
+		}
+		p {
+			color: var(--color-primary-black);
+		}
+
+		&:hover {
+			background-color: var(--color-primary-peach);
+			cursor: pointer;
+			h1 {
+				color: var(--color-primary-white);
+			}
+			p {
+				color: var(--color-primary-white);
+			}
+		}
+	}
+</style>

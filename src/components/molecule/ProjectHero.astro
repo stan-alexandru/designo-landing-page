@@ -1,0 +1,36 @@
+---
+interface Props {
+	title: string;
+	text: string;
+}
+const { title, text } = Astro.props;
+---
+
+<article>
+	<h1>{title}</h1>
+	<p>
+		{text}
+	</p>
+</article>
+<style scoped>
+	article {
+		height: 320px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding-inline: 24px;
+		background-color: var(--color-primary-peach);
+		color: var(--color-primary-white);
+		background-image: url('/public/assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+		background-repeat: no-repeat;
+		background-position: right top;
+		@media (--size-md) {
+			height: 252px;
+			background-image: url('/public/assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg');
+			background-position: center;
+			border-radius: var(--border-radius);
+		}
+	}
+</style>
