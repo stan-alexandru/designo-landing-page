@@ -1,0 +1,74 @@
+---
+import Button from '../atom/Button.astro';
+---
+
+<div class='call-wrapper'>
+	<article>
+		<div class='text-wrapper'>
+			<h1>Let’s talk about your project</h1>
+			<p>
+				Ready to take it to the next level? Contact us today and find out how
+				our expertise can help your business grow.
+			</p>
+		</div>
+		<Button text='Get in Touch' theme='dark' href='/contact' />
+	</article>
+</div>
+
+<style scoped>
+	.call-wrapper {
+		background: linear-gradient(
+			to bottom,
+			var(--color-primary-white) 50%,
+			var(--color-primary-black) 0%
+		);
+		@media (--size-md) {
+			background: linear-gradient(
+				to bottom,
+				var(--color-primary-white) 80%,
+				var(--color-primary-black) 0%
+			);
+		}
+	}
+	article {
+		margin-top: 120px;
+		border-radius: var(--border-radius);
+		margin-inline: 24px;
+		height: 379px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 64px 24px;
+		background-color: var(--color-primary-peach);
+		color: var(--color-primary-white);
+		background-image: url('/public/assets/shared/desktop/bg-pattern-call-to-action.svg');
+		@media (--size-md) {
+			height: 350px;
+			padding: 57px 59px;
+			margin-inline: auto;
+			max-width: 43.125rem;
+		}
+		@media (--size-lg) {
+			justify-content: space-between;
+
+			flex-direction: row;
+			width: 1111px;
+			height: 292px;
+			max-width: 69.374rem;
+			padding: 57px 59px;
+		}
+	}
+	.text-wrapper {
+		width: 100%;
+		@media (--size-lg) {
+			text-align: start;
+			height: 148px;
+			width: 459px;
+		}
+	}
+	h1 {
+		margin: 0;
+	}
+</style>

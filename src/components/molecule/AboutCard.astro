@@ -42,6 +42,9 @@ const { title, text, background, theme = 'light' } = Astro.props;
 			flex-direction: row;
 		}
 	}
+	article:first-child {
+		margin-top: unset;
+	}
 	.text-wrapper {
 		padding: 80px 24px;
 		display: flex;
@@ -61,7 +64,7 @@ const { title, text, background, theme = 'light' } = Astro.props;
 		width: 100%;
 	}
 	.light {
-		background-image: url('/public/assets/shared/desktop/bg-pattern-three-circles.svg');
+		background-image: url('/assets/shared/desktop/bg-pattern-three-circles.svg');
 		background-position: right bottom;
 		background-color: #fdf3f0;
 		h1 {
@@ -72,7 +75,7 @@ const { title, text, background, theme = 'light' } = Astro.props;
 		}
 	}
 	.dark {
-		background-image: url('/public/assets/about/mobile/bg-pattern-hero-about-mobile.svg');
+		background-image: url('/assets/about/mobile/bg-pattern-hero-about-mobile.svg');
 		background-position: top -120px right;
 		background-color: var(--color-primary-peach);
 		@media (--size-md) {
@@ -80,7 +83,7 @@ const { title, text, background, theme = 'light' } = Astro.props;
 		}
 		@media (--size-lg) {
 			background-position: bottom;
-			background-image: url('/public/assets/about/desktop/bg-pattern-hero-about-desktop.svg');
+			background-image: url('/assets/about/desktop/bg-pattern-hero-about-desktop.svg');
 		}
 		h1 {
 			color: var(--color-primary-white);

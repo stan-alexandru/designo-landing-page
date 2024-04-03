@@ -1,8 +1,11 @@
 ---
 import { HEADER_DATA, SOCIAL_DATA } from '@/data';
+import CallToAction from '../molecule/CallToAction.astro';
 ---
 
+<CallToAction />
 <footer>
+	<div class='card-wrapper'></div>
 	<div class='container'>
 		<div class='footer-logo-wrapper'>
 			<a href='/' class='footer-logo'>
@@ -53,7 +56,6 @@ import { HEADER_DATA, SOCIAL_DATA } from '@/data';
 
 <style scoped>
 	footer {
-		margin-top: 120px;
 		background-color: var(--color-primary-black);
 		padding: 4rem 1.5rem;
 	}

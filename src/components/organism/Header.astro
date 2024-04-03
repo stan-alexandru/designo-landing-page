@@ -40,10 +40,10 @@ import { HEADER_DATA } from '@/data';
 		{HEADER_DATA.map((item) => <a href={item.href}>{item.title}</a>)}
 	</div>
 </nav>
+
 <script>
 	const navigation = document.getElementById('toggle-nav');
 	const image = document.getElementById('mobile-nav-button');
-
 	function toggleNav() {
 		const navigation = document.getElementById('mobile-nav')!;
 		if (navigation?.style.display === 'inline-block') {
@@ -59,6 +59,7 @@ import { HEADER_DATA } from '@/data';
 
 <style scoped>
 	header {
+		z-index: 9999;
 		margin-top: 1.875rem;
 		margin-bottom: 1.875rem;
 		padding: 0 1.5rem;
