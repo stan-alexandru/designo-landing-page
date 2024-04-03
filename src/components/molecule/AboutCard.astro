@@ -1,0 +1,109 @@
+---
+interface Props {
+	title: string;
+	text: string[];
+	background: { small: string; medium: string; large: string };
+	theme?: 'dark' | 'light';
+}
+const { title, text, background, theme = 'light' } = Astro.props;
+---
+
+<article>
+	<div class='img'></div>
+	<div class:list={['text-wrapper', theme === 'dark' ? 'dark' : 'light']}>
+		<h1>{title}</h1>
+		<div>
+			{text.map((text) => <p>{text}</p>)}
+		</div>
+	</div>
+</article>
+
+<style
+	scoped
+	define:vars={{
+		backgroundSmall: `url("${background.small}")`,
+		backgroundMedium: `url("${background.medium}")`,
+		backgroundLarge: `url("${background.large}")`,
+	}}
+>
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		@media (--size-md) {
+			border-radius: var(--border-radius);
+			margin-top: 120px;
+		}
+		@media (--size-lg) {
+			margin-top: 160px;
+
+			height: 480px;
+			flex-direction: row;
+		}
+	}
+	.text-wrapper {
+		padding: 80px 24px;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@media (--size-md) {
+			padding: 64px 58px;
+		}
+		@media (--size-lg) {
+			text-align: start;
+			padding: 135px 95px;
+		}
+	}
+	h1 {
+		width: 100%;
+	}
+	.light {
+		background-image: url('/public/assets/shared/desktop/bg-pattern-three-circles.svg');
+		background-position: right bottom;
+		background-color: #fdf3f0;
+		h1 {
+			color: var(--color-primary-peach);
+		}
+		p {
+			color: var(--color-primary-black);
+		}
+	}
+	.dark {
+		background-image: url('/public/assets/about/mobile/bg-pattern-hero-about-mobile.svg');
+		background-position: top -120px right;
+		background-color: var(--color-primary-peach);
+		@media (--size-md) {
+			background-position: top right;
+		}
+		@media (--size-lg) {
+			background-position: bottom;
+			background-image: url('/public/assets/about/desktop/bg-pattern-hero-about-desktop.svg');
+		}
+		h1 {
+			color: var(--color-primary-white);
+		}
+		p {
+			color: var(--color-primary-white);
+		}
+	}
+	.img {
+		width: 100%;
+		height: 320px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: var(--backgroundSmall);
+
+		@media (--size-md) {
+			background-size: unset;
+			background-image: var(--backgroundMedium);
+		}
+		@media (--size-lg) {
+			min-width: 476px;
+			min-height: 480px;
+			background-image: var(--backgroundLarge);
+		}
+	}
+</style>
